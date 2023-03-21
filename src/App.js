@@ -38,15 +38,15 @@ const App = () => {
 
   return (
     <div className='flex flex-column pt6 items-center h-100'>
-      <h1 className='white-90 f1 mb4' style={{ 'text-shadow': '0 0 15px rgba(0, 0, 0, .25)' }}>Numbers facts 🔢</h1>
+      <h1 className='white-90 f1 mb4' style={{ textShadow: '0 0 15px rgba(0, 0, 0, .25)' }}>Numbers facts 🔢</h1>
       <div className='flex'>
         <input
-          className='f3 db center pa3 ba b--green bg-lightest-blue outline-0 br2 br-0 br--left'
           onChange={changeInput}
+          className='f3 db center pa3 ba b--green bg-lightest-blue outline-0 br2 br-0 br--left'
           type='text'
           placeholder='type a number'
         />
-        <select className='f3 db center pa3 ba b--green bg-lightest-blue outline-0 br2 br--right pointer' onChange={changeType}>
+        <select onChange={changeType} className='f3 db center pa3 ba b--green bg-lightest-blue outline-0 br2 br--right pointer'>
           <option value='trivia' defaultValue>Trivia</option>
           <option value='math'>Math</option>
           <option value='date'>Date</option>
