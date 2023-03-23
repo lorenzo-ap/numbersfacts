@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const App = () => {
   const API_URL = 'http://numbersapi.com';
@@ -8,14 +9,13 @@ const App = () => {
 
   const fetchData = async (value, type) => {
     try {
-      const resp = await fetch(`${API_URL}/${value}/${type}`);
-      const data = await resp.text();
-      setText(data);
+      const response = await axios.get(`${API_URL}/${value}/${type}`);
+      setText(response.data);
     } catch (error) {
       console.log('API error!', error);
       setText('Sorry, the API has an error!');
     }
-  };
+  }
 
   const changeInput = (event) => {
     const numVal = Number(event.target.value);
